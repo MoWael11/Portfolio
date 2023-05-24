@@ -4,12 +4,61 @@
 
 @layer base {
   :root {
-    --bg-dark: rgb(26,26,26);
-    --bg-dark-header: rgb(20,20,20);
-    --foreground-rgb: rgb(255,255,255);
+    --bg-dark: #121212;
+    --bg-dark-header: #000000ac;
+    --bg-dark-links: #000000b3;
+    --bg-dark-footer: #000000;
+    --primary-color: #f7f7f7;
+    --secondary-color: #7e7e7e;
+    --error-color: #c62828;
+    --bg-secondary-color: #171717;
+    --bg-hover-secondary-color: #242424;
+    --border-color: #404040;
+  }
+  body {
+    color: var(--foreground-rgb);
+    background-color: var(--bg-dark);
+  }
+  * {
+    scroll-behavior: smooth !important;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #545454;
   }
 }
-body {
-  color: var(--foreground-rgb);
-  background-color: var(--bg-dark);
+
+@layer utilities {
+  .card::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+  }
+  .card-border {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.763),
+      transparent 40%
+    );
+    opacity: 0;
+  }
+  #cards:hover > .card > .card-border {
+    opacity: 1;
+  }
+  .text-shadow {
+    text-shadow: 0px 0px 6px var(--primary-color);
+  }
+}
+
+@layer components {
+  .toggle-btn {
+    @apply [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div]:bg-transparent;
+  }
 }
