@@ -7,6 +7,8 @@ const dotenv_1 = require("dotenv");
 const express_1 = __importDefault(require("express"));
 const root_1 = __importDefault(require("./routes/root"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
+const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
+const contactRoutes_1 = __importDefault(require("./routes/contactRoutes"));
 const path_1 = __importDefault(require("path"));
 const logger_1 = require("./middleware/logger");
 const errorHandler_1 = require("./middleware/errorHandler");
@@ -27,7 +29,9 @@ app.use((0, cookie_parser_1.default)());
 // serve the static files from the public directory
 app.use('/', express_1.default.static(path_1.default.join(__dirname, '..', 'public')));
 app.use('/', root_1.default);
+app.use('/auth', authRoutes_1.default);
 app.use('/users', userRoutes_1.default);
+app.use('/contact', contactRoutes_1.default);
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) { // header of a http request is text/html

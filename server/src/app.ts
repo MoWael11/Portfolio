@@ -1,7 +1,9 @@
 import { config } from 'dotenv'
 import express, {Express, Request, Response} from 'express'
 import root from './routes/root'
-import adminRoutes from './routes/userRoutes'
+import userRoutes from './routes/userRoutes'
+import authRoutes from './routes/authRoutes'
+import contactRoutes from './routes/contactRoutes'
 import path from 'path'
 import { logger, logEvents } from './middleware/logger'
 import { errorHandler } from './middleware/errorHandler'
@@ -31,7 +33,9 @@ app.use('/', express.static(path.join(__dirname, '..', 'public')))
 
 app.use('/', root)
 
-app.use('/users', adminRoutes)
+app.use('/auth', authRoutes)
+app.use('/users', userRoutes)
+app.use('/contact', contactRoutes)
 
 
 app.all('*', (req: Request, res: Response) => {
