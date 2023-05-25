@@ -37,9 +37,11 @@ const Contact = () => {
         phone,
       });
 
-      const response = await axios.post("http://localhost:4000/contact", {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
         email: validatedForm.email,
         name: validatedForm.name,
+        message: validatedForm.message,
+        phone: validatedForm.phone,
       });
 
       pForShowState.current!.innerText = response.data;
