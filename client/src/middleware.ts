@@ -5,12 +5,12 @@ import { NextResponse } from "next/server";
 export default withAuth(
   async function middleware(req) {
     const pathname = req.nextUrl.pathname;
-    console.log(pathname);
+    // console.log(pathname);
 
     // Manage route protection
     const isAuth = await getToken({ req });
     const isLoginPage = pathname.startsWith("/login");
-    console.log(isAuth);
+    // console.log(isAuth);
 
     if (isLoginPage) {
       if (isAuth) {

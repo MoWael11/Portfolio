@@ -42,7 +42,7 @@ const Projects = () => {
 
   return (
     <>
-      <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl text-primary-text">
+      <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl tracking-wider text-primary-text">
         Projects
       </h2>
       <div
@@ -52,7 +52,7 @@ const Projects = () => {
       >
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -66,7 +66,7 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
                   Simon Game
                 </h3>
                 <p>
@@ -95,7 +95,7 @@ const Projects = () => {
         </div>
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -109,7 +109,7 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
                   Music website
                 </h3>
                 <p>
@@ -138,7 +138,7 @@ const Projects = () => {
         </div>
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -152,7 +152,7 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
                   ProjectHub
                 </h3>
                 <p>
@@ -180,7 +180,7 @@ const Projects = () => {
         </div>
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -194,7 +194,9 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">Kasper</h3>
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
+                  Kasper
+                </h3>
                 <p>
                   Category{" "}
                   <span className="text-[16px] text-secondary-text sm:text-lg">
@@ -221,7 +223,7 @@ const Projects = () => {
         </div>
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -235,7 +237,7 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
                   Freelance Web
                 </h3>
                 <p>
@@ -263,7 +265,7 @@ const Projects = () => {
         </div>
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -277,7 +279,7 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
                   Naval Battles
                 </h3>
                 <p>
@@ -306,7 +308,7 @@ const Projects = () => {
         </div>
         <div
           onMouseMove={(e: MouseEvent) => handleMouseMove(e)}
-          className='card relative flex h-full cursor-pointer rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
+          className='card relative flex h-full rounded-xl bg-[rgb(255,255,255)]/[0.1] p-[1px] opacity-0 transition-opacity delay-200 duration-500 before:absolute before:left-0 before:top-0 before:z-[3] before:hidden before:h-full before:w-full before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 before:content-[""] before:hover:opacity-100 before:md:block'
         >
           <div className="card-content relative z-[2] flex w-full flex-col gap-2 rounded-xl bg-dark-secondary-bg p-2 text-lg text-primary-text">
             <div className="project-info flex flex-col gap-4 sm:flex-row">
@@ -320,7 +322,7 @@ const Projects = () => {
                 />
               </div>
               <div className="info gap-2py-2 flex flex-col">
-                <h3 className="mb-2 text-xl font-medium sm:text-2xl">
+                <h3 className="mb-2 font-roboto-mono text-xl font-medium sm:text-2xl">
                   Chess website
                 </h3>
                 <p>

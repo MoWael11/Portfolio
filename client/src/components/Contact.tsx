@@ -6,10 +6,15 @@ import axios, { AxiosError } from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "./ui/Button";
+import { FC } from "react";
 
 type FormData = z.infer<typeof contactFormValidator>;
 
-const Contact = () => {
+interface ContactProps {
+  URL: string;
+}
+
+const Contact: FC<ContactProps> = ({ URL }) => {
   const pForShowState = useRef<HTMLParagraphElement>(null);
   const form = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,8 +41,7 @@ const Contact = () => {
         message,
         phone,
       });
-
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+      const response = await axios.post(`${URL}/contact`, {
         email: validatedForm.email,
         name: validatedForm.name,
         message: validatedForm.message,
@@ -70,11 +74,15 @@ const Contact = () => {
       }
       pForShowState.current!.classList.add("text-error-text");
       if (error instanceof AxiosError) {
-        pForShowState.current!.innerText = "Server error, please try later";
+        if (error.response?.status === 400 || error.response?.status === 500) {
+          pForShowState.current!.innerText = error.response.data;
+          return;
+        }
+        pForShowState.current!.innerText = "Server Error, Please try later.";
         return;
       }
       pForShowState.current!.innerText =
-        "Something went wrong, please try again";
+        "Something went wrong, please try later.";
     } finally {
       setIsLoading(false);
       form.current!.reset();
@@ -86,11 +94,11 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl text-primary-text">
-        Contact Me
+      <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl tracking-wider text-primary-text">
+        Contact
       </h2>
       <div className="relative m-auto flex flex-col">
-        <h3 className="mb-8 text-lg text-secondary-text md:text-xl">
+        <h3 className="mb-8 text-lg md:text-2xl">
           I&apos;m looking forward to hearing from you!
         </h3>
         <form
@@ -107,6 +115,7 @@ const Contact = () => {
           </label>
           <div className="relative mb-4 md:mb-2">
             <input
+              id="name"
               spellCheck={false}
               placeholder="Your Name"
               autoComplete="off"
@@ -126,6 +135,7 @@ const Contact = () => {
           </label>
           <div className="relative mb-4 md:mb-2">
             <input
+              id="phone"
               spellCheck={false}
               placeholder="Your Phone (optional)"
               autoComplete="off"
@@ -142,6 +152,7 @@ const Contact = () => {
           </label>
           <div className="relative mb-4 md:col-span-2 md:mb-2">
             <input
+              id="email"
               spellCheck={false}
               placeholder="Your Email"
               autoComplete="off"
@@ -161,6 +172,7 @@ const Contact = () => {
           </label>
           <div className="relative mb-4 min-h-[150px] md:col-span-2 md:mb-2">
             <textarea
+              id="message"
               spellCheck={false}
               placeholder="Your Message"
               autoComplete="off"

@@ -55,6 +55,9 @@
   .text-shadow {
     text-shadow: 0px 0px 6px var(--primary-color);
   }
+  .rotateY-180 {
+    transform: rotateY(180deg);
+  }
 }
 
 @layer components {

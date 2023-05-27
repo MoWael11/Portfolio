@@ -4,23 +4,41 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import { AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
-import { Metadata } from "next";
+const dotenv = require('dotenv');
+dotenv.config();
 
 export default function Home() {
+  
   return (
     <>
       <Header />
-      <main className="overflow-hidden">
-        <section className='relative mb-20 h-[calc(100vh-57.6px)] before:absolute before:left-0 before:top-0 before:z-[-99] before:h-full before:w-full before:bg-[url("/images/main-mobile.jpg")] before:bg-cover before:bg-left before:bg-no-repeat before:opacity-60 before:grayscale before:saturate-200 before:sepia-[60%] before:content-[""] after:absolute after:bottom-0 after:w-full after:shadow-[0px_10px_50px_40px_black] after:content-[""] before:sm:bg-[url("/images/main.jpg")] before:sm:bg-[length:1536px] after:sm:hidden before:2xl:bg-cover'>
-          <span className="dots opacity-40">
-            <span className="dot-1 absolute top-1/2 z-[-1] hidden origin-bottom animate-dot1 rounded-full bg-[#fdf3da] sm:block"></span>
-            <span className="dot-2 absolute top-1/2 z-[-1] hidden origin-bottom animate-dot2 rounded-full bg-[#fdf3da] sm:block"></span>
-            <span className="dot-3 absolute top-1/2 z-[-1] hidden origin-bottom animate-dot3 rounded-full bg-[#fdf3da] sm:block"></span>
-            <span className="dot-4 absolute top-1/2 z-[-1] hidden origin-bottom animate-dot4 rounded-full bg-[#fdf3da] sm:block"></span>
+      <main className="overflow-hidden font-roboto">
+        <section className='relative mb-20 h-[calc(100vh-57.6px)] before:absolute before:left-0 before:top-0 before:z-[-99] before:h-full before:w-full before:bg-[url("/images/main-mobile.jpg")] before:bg-cover before:bg-left before:bg-no-repeat before:opacity-60 before:content-[""] after:absolute after:bottom-0 after:w-full after:shadow-[0px_10px_40px_50px_black] after:shadow-[#121212] after:content-[""]  before:md:hidden'>
+          <div className="video absolute top-0 left-0 z-[-1] hidden md:block opacity-[80%] md:w-[1536px] h-full 2xl:w-full overflow-hidden grayscale-[60%]">
+            <video autoPlay loop muted className="w-full object-cover rotateY-180">
+              <source src="/videos/neural-network.mp4" type="video/mp4"/>
+              <source src="/videos/neural-network.webm" type="video/webm"/>
+              <source src="/videos/neural-network.ogv" type="video/ogg"/>
+              your browser does not support this video.
+            </video>
+          </div>
+          <div className="video absolute top-0 left-0 z-[-2] hidden md:block opacity-[60%] md:w-[1536px] h-full 2xl:w-full overflow-hidden">
+            <video autoPlay loop muted className="w-full object-cover">
+              <source src="/videos/neural-network-1.mp4" type="video/mp4"/>
+              <source src="/videos/neural-network-1.webm" type="video/webm"/>
+              <source src="/videos/neural-network-1.ogv" type="video/ogg"/>
+              your browser does not support this video.
+            </video>
+          </div>
+          <span className="dots hidden opacity-40">
+            <span className="dot-1 absolute top-1/2 z-[-1] origin-bottom animate-dot1 rounded-full bg-[#fdf3da]"></span>
+            <span className="dot-2 absolute top-1/2 z-[-1] origin-bottom animate-dot2 rounded-full bg-[#fdf3da]"></span>
+            <span className="dot-3 absolute top-1/2 z-[-1] origin-bottom animate-dot3 rounded-full bg-[#fdf3da]"></span>
+            <span className="dot-4 absolute top-1/2 z-[-1] origin-bottom animate-dot4 rounded-full bg-[#fdf3da]"></span>
           </span>
           <div className="container flex h-full">
             <div className="text gpa-1 flex flex-col justify-center text-primary-text sm:translate-x-[90px] xl:translate-x-0">
-              <h2 className="mb-4 w-0 animate-[text_0.5s_linear_forwards] overflow-hidden text-4xl font-bold">
+              <h2 className="mb-4 w-0 animate-[text_0.5s_linear_forwards] overflow-hidden text-4xl font-bold font-roboto-mono">
                 Hi<span className="font-mono">!</span>&nbsp;
               </h2>
               <p className="w-0 animate-[text_1s_0.5s_linear_forwards] overflow-hidden py-1 text-[22px] sm:text-3xl">
@@ -30,19 +48,19 @@ export default function Home() {
                 a&nbsp;passionate&nbsp;full&nbsp;stack&nbsp;developer
               </p>
               <p className="w-0 animate-[text_1s_2.5s_linear_forwards] overflow-hidden py-1 text-[22px] sm:text-3xl">
-                from&nbsp;Egypt.
+                from&nbsp;Egypt
               </p>
             </div>
           </div>
         </section>
-        <section id="skills" className="container mb-20 min-h-[100vh]">
+        <section id="skills" className="container mb-20 md:min-h-[100vh]">
           <Skills />
         </section>
-        <section id="projects" className="container mb-20 min-h-[100vh]">
+        <section id="projects" className="container mb-20 md:min-h-[100vh]">
           <Projects />
         </section>
         <section id="contact" className="container mb-20">
-          <Contact />
+          <Contact URL={process.env.APP_API_URL as string} />
         </section>
         <footer className="bg-dark-footer">
           <div className="container flex items-center justify-between py-4">
@@ -53,8 +71,9 @@ export default function Home() {
               href="https://github.com/MoWael11"
               passHref={false}
               target="_blank"
+              aria-label="My github profile"
             >
-              <AiFillGithub className="h-[30px] w-[30px] cursor-pointer text-primary-text transition-colors duration-300 hover:text-secondary-text md:h-[40px] md:w-[40px]" />
+              <AiFillGithub className="h-[30px] w-[30px] cursor-pointer text-primary-text transition-colors duration-300 hover:text-secondary-text md:h-[40px] md:w-[40px]"/>
             </Link>
           </div>
         </footer>

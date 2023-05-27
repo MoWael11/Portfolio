@@ -1,4 +1,17 @@
 import "./globals.css";
+import { Roboto, Roboto_Mono, Montserrat } from "@next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "900", "700"],
+  variable: "--font-roboto",
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto-mono",
+});
 
 export const metadata = {
   title: {
@@ -49,7 +62,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${roboto.variable} ${robotoMono.variable} `}>
+        {children}
+      </body>
     </html>
   );
 }

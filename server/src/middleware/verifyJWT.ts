@@ -16,7 +16,7 @@ export default (req: any, res:  Response, next:  NextFunction) => {
     (err: (VerifyErrors | null|any), decoded: any) => {
       if (err) return res.status(403).json({ message: 'Forbidden' })
       req.user = decoded.UserInfo.username
-      
+  
       next()
     }
   )

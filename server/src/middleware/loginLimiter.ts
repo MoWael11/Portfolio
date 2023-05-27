@@ -3,7 +3,7 @@ import { logEvents } from './logger'
 
 const loginLimiter = rateLimit({
   windowMs: 120 * 1000, // 2 minutes 
-  max: 5, // limit each IP to 5 requests per windowMs
+  max: 20, // limit each IP to 5 requests per windowMs
   message:
   {message:'Too many login attempts. Please try again after a 2 minutes'},
   handler: (req, res, next, options) => {

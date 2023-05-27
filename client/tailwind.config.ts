@@ -37,6 +37,10 @@ const config: Config = {
         'xl': '1200px',
         'xxl': '1400px',
       },
+      fontFamily: {
+        'roboto': 'var(--font-roboto)',
+        'roboto-mono': 'var(--font-roboto-mono)',
+      },
       gridTemplateColumns: {
         'projects': 'repeat(auto-fill, minmax(450px, 1fr))',
         'projects-sm': 'repeat(auto-fill, minmax(280px, 1fr))',

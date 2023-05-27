@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 exports.default = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log(process.env.DATABASE_URI);
         mongoose_1.default.connect(process.env.DATABASE_URI);
     }
     catch (err) {

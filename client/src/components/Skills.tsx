@@ -36,7 +36,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl text-primary-text">
+      <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl tracking-wider text-primary-text">
         Skills
       </h2>
       <div id="langagues" className="mb-10 leading-8 text-primary-text">
@@ -50,7 +50,7 @@ const Skills = () => {
         </p>
         <ul
           ref={skills}
-          className="flex list-disc flex-col gap-4 overflow-hidden pl-8 text-lg sm:text-xl"
+          className="flex list-disc flex-col gap-4 overflow-hidden pl-8 text-lg"
         >
           <li className="translate-x-[-100%] opacity-0 transition duration-1000">
             JavaScript, with a focus on Node.js and Express.js for server-side
@@ -81,7 +81,7 @@ const Skills = () => {
       >
         <li
           data-lang={"TypeScript"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[500ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[500ms]'
         >
           <Link
             replace={true}
@@ -103,7 +103,7 @@ const Skills = () => {
         </li>
         <li
           data-lang={"Next.js"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[700ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[700ms]'
         >
           <Link
             replace={true}
@@ -125,27 +125,27 @@ const Skills = () => {
         </li>
         <li
           data-lang={"Node.js"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[800ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[800ms]'
         >
           <Link
             replace={true}
             scroll
             target={"_blank"}
             href={"https://nodejs.org/"}
-            className="flex rounded-lg px-[10.5px] py-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:px-[18.5px] lg:py-4"
+            className="flex rounded-lg p-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:p-4"
           >
             <Image
               width={1200}
               height={1200}
               src="/images/nodejs.png"
               alt="nodejs"
-              className="h-[50px] w-[45px] sm:h-[64px] sm:w-[59px] lg:h-[80px] lg:w-[75px]"
+              className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
           </Link>
         </li>
         <li
           data-lang={"Motoko"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1000ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1000ms]'
         >
           <Link
             replace={true}
@@ -167,27 +167,27 @@ const Skills = () => {
         </li>
         <li
           data-lang={"MongoDB"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1200ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1200ms]'
         >
           <Link
             replace={true}
             scroll
             target={"_blank"}
             href={"https://www.mongodb.com/"}
-            className="flex rounded-lg px-[18px] py-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:px-[26px] lg:py-4"
+            className="flex rounded-lg p-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:p-4"
           >
             <Image
               width={1200}
               height={1200}
               src="/images/mongodb.png"
               alt="mondodb"
-              className="h-[50px] w-[30px] sm:h-[64px] sm:w-[44px] lg:h-[80px] lg:w-[60px]"
+              className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
           </Link>
         </li>
         <li
           data-lang={"web3"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1400ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1400ms]'
         >
           <Link
             replace={true}
@@ -207,7 +207,7 @@ const Skills = () => {
         </li>
         <li
           data-lang={"Tailwindcss"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1600ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1600ms]'
         >
           <Link
             replace={true}
@@ -229,7 +229,7 @@ const Skills = () => {
         </li>
         <li
           data-lang={"React"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1800ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1800ms]'
         >
           <Link
             replace={true}
@@ -251,7 +251,7 @@ const Skills = () => {
         </li>
         <li
           data-lang={"Python"}
-          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border  border-dark-border font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[2000ms]'
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border  font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[2000ms]'
         >
           <Link
             replace={true}
