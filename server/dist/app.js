@@ -27,11 +27,11 @@ app.use((0, cors_1.default)(corsOptions_1.default));
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 // serve the static files from the public directory
-app.use('/', express_1.default.static(path_1.default.join(__dirname, '..', 'public')));
-app.use('/', root_1.default);
-app.use('/auth', authRoutes_1.default);
-app.use('/users', userRoutes_1.default);
-app.use('/contact', contactRoutes_1.default);
+app.use('/api', express_1.default.static(path_1.default.join(__dirname, '..', 'public')));
+app.use('/api', root_1.default);
+app.use('/api/auth', authRoutes_1.default);
+app.use('/api/users', userRoutes_1.default);
+app.use('/api/contact', contactRoutes_1.default);
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) { // header of a http request is text/html

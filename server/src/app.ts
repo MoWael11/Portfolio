@@ -29,13 +29,13 @@ app.use(express.json())
 app.use(cookieparser())
 
 // serve the static files from the public directory
-app.use('/', express.static(path.join(__dirname, '..', 'public')))
+app.use('/api', express.static(path.join(__dirname, '..', 'public')))
 
-app.use('/', root)
+app.use('/api', root)
 
-app.use('/auth', authRoutes)
-app.use('/users', userRoutes)
-app.use('/contact', contactRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/users', userRoutes)
+app.use('/api/contact', contactRoutes)
 
 
 app.all('*', (req: Request, res: Response) => {
