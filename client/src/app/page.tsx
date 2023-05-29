@@ -59,7 +59,7 @@ export default function Home() {
         <section id="projects" className="container mb-20 md:min-h-[100vh]">
           <Projects />
         </section>
-        <section id="contact" className="container mb-20">
+        <section id="contact" className="container mb-20 md:min-h-[80vh] before:bg-cover before:bg-[url('/images/contact.png')] before:hidden before:sm:block before:w-[900px] before:h-[300px] md:before:w-[1110px] md:before:h-[450px] before:translate-x-[-50%] lg:before:translate-x-[-46%] relative before:absolute before:contrast-0 before:left-[50%] before:z-[-1] before:translate-y-[-50%] lg:before:w-[1400px] before:top-[50%] lg:before:h-[600px] before:content-['']">
           <Contact URL={process.env.APP_API_URL as string} />
         </section>
         <footer className="bg-dark-footer">

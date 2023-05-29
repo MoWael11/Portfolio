@@ -114,14 +114,16 @@ const Contact: FC<ContactProps> = ({ URL }) => {
             insert your name
           </label>
           <div className="relative mb-4 md:mb-2">
-            <input
-              id="name"
-              spellCheck={false}
-              placeholder="Your Name"
-              autoComplete="off"
-              {...register("name")}
-              className="flex w-full rounded-sm border-[1px] border-dark-border bg-dark px-4 py-2 text-[16px] text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
-            />
+            <div className="before:content-[''] before:w-full before:h-full before:rounded-sm before:absolute before:top-0 before:left-0 before:bg-dark before:opacity-[61%] bg-transparent">
+              <input
+                id="name"
+                spellCheck={false}
+                placeholder="Your Name"
+                autoComplete="off"
+                {...register("name")}
+                className="w-full rounded-sm border-[1px] border-dark-border relative bg-transparent px-4 py-2 text-[16px] text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
+              />
+            </div>
             <p className="absolute bottom-0 translate-y-[100%] text-sm text-error-text">
               {errors.name?.message}
             </p>
@@ -134,14 +136,16 @@ const Contact: FC<ContactProps> = ({ URL }) => {
             insert your phone
           </label>
           <div className="relative mb-4 md:mb-2">
-            <input
-              id="phone"
-              spellCheck={false}
-              placeholder="Your Phone (optional)"
-              autoComplete="off"
-              {...register("phone")}
-              className="flex w-full rounded-sm border-[1px] border-dark-border bg-dark px-4 py-2 text-[16px] text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
-            />
+            <div className="before:content-[''] before:w-full before:h-full before:rounded-sm before:absolute before:top-0 before:left-0 before:bg-dark before:opacity-[61%] bg-transparent">
+              <input
+                id="phone"
+                spellCheck={false}
+                placeholder="Your Phone (optional)"
+                autoComplete="off"
+                {...register("phone")}
+                className="w-full rounded-sm border-[1px] border-dark-border relative bg-transparent px-4 py-2 text-[16px] text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
+              />
+            </div>
           </div>
           <label
             htmlFor="email"
@@ -151,17 +155,19 @@ const Contact: FC<ContactProps> = ({ URL }) => {
             insert your email
           </label>
           <div className="relative mb-4 md:col-span-2 md:mb-2">
-            <input
-              id="email"
-              spellCheck={false}
-              placeholder="Your Email"
-              autoComplete="off"
-              {...register("email")}
-              className="text-[16px]rounded-sm flex w-full border-[1px] border-dark-border bg-dark px-4 py-2 text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
-            />
-            <p className="absolute bottom-0 translate-y-[100%] text-sm text-error-text">
-              {errors.email?.message}
-            </p>
+            <div className="before:content-[''] before:w-full before:h-full before:rounded-sm before:absolute before:top-0 before:left-0 before:bg-dark before:opacity-[61%] bg-transparent">
+              <input
+                id="email"
+                spellCheck={false}
+                placeholder="Your Email"
+                autoComplete="off"
+                {...register("email")}
+                className="text-[16px] rounded-sm flex w-full border-[1px] border-dark-border relative bg-transparent px-4 py-2 text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
+              />
+              <p className="absolute bottom-0 translate-y-[100%] text-sm text-error-text">
+                {errors.email?.message}
+              </p>
+            </div>
           </div>
           <label
             htmlFor="message"
@@ -171,17 +177,19 @@ const Contact: FC<ContactProps> = ({ URL }) => {
             insert your massege
           </label>
           <div className="relative mb-4 min-h-[150px] md:col-span-2 md:mb-2">
-            <textarea
-              id="message"
-              spellCheck={false}
-              placeholder="Your Message"
-              autoComplete="off"
-              {...register("message")}
-              className="text-[16px]rounded-sm flex h-full w-full border-[1px] border-dark-border bg-dark px-4 py-2 text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
-            />
-            <p className="absolute bottom-0 translate-y-[100%] text-sm text-error-text">
-              {errors.message?.message}
-            </p>
+            <div className="h-full before:content-[''] before:w-full before:h-full before:rounded-sm before:absolute before:top-0 before:left-0 before:bg-dark before:opacity-[61%] bg-transparent">
+              <textarea
+                id="message"
+                spellCheck={false}
+                placeholder="Your Message"
+                autoComplete="off"
+                {...register("message")}
+                className="text-[16px] rounded-sm flex h-full w-full border-[1px] border-dark-border relative bg-transparent px-4 py-2 text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
+              />
+              <p className="absolute bottom-0 translate-y-[100%] text-sm text-error-text">
+                {errors.message?.message}
+              </p>
+            </div>
           </div>
           <Button
             isLoading={isLoading}
