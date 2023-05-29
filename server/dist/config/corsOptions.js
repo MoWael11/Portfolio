@@ -1,19 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const allowedOrigins_1 = require("./allowedOrigins");
-const logger_1 = require("../middleware/logger");
 exports.default = {
     origin: (origin, callback) => {
-        try {
-            if (allowedOrigins_1.allowedOrigins.indexOf(origin) !== -1) { // remeber to delete !origin when deploying
-                callback(null, true);
-            }
-            else {
-                callback(new Error('Not allowed by CORS'));
-            }
+        if (allowedOrigins_1.allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
         }
-        catch (err) {
-            (0, logger_1.logEvents)(`${err.name}: ${err.message}`, 'errLog.txt');
+        else {
+            callback(new Error('Not allowed by CORS'));
         }
     },
     credentials: true,

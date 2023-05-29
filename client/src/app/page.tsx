@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <main className="overflow-hidden font-roboto">
         <section className='relative mb-20 h-[calc(100vh-57.6px)] before:absolute before:left-0 before:top-0 before:z-[-99] before:h-full before:w-full before:bg-[url("/images/main-mobile.jpg")] before:bg-cover before:bg-left before:bg-no-repeat before:opacity-60 before:content-[""] after:absolute after:bottom-0 after:w-full after:shadow-[0px_10px_40px_50px_black] after:shadow-[#121212] after:content-[""]  before:md:hidden'>
-          <div className="video absolute top-0 left-0 z-[-1] hidden md:block opacity-[80%] md:w-[1536px] h-full 2xl:w-full overflow-hidden grayscale-[60%]">
+          <div className="video absolute top-0 left-0 z-[-1] hidden md:block opacity-[82%] md:w-[1536px] h-full 2xl:w-full overflow-hidden grayscale-[10%]">
             <video autoPlay loop muted className="w-full object-cover rotateY-180">
               <source src="/videos/neural-network.mp4" type="video/mp4"/>
               <source src="/videos/neural-network.webm" type="video/webm"/>
