@@ -4,8 +4,8 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import { AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
-const dotenv = require('dotenv');
-dotenv.config();
+import {config} from 'dotenv'
+config()
 
 export default function Home() {
   
@@ -13,29 +13,23 @@ export default function Home() {
     <>
       <Header />
       <main className="overflow-hidden font-roboto">
-        <section className='relative mb-20 h-[calc(100vh-57.6px)] before:absolute before:left-0 before:top-0 before:z-[-99] before:h-full before:w-full before:bg-[url("/images/main-mobile.jpg")] before:bg-cover before:bg-left before:bg-no-repeat before:opacity-60 before:content-[""] after:absolute after:bottom-0 after:w-full after:shadow-[0px_10px_40px_50px_black] after:shadow-[#121212] after:content-[""]  before:md:hidden'>
-          <div className="video absolute top-0 left-0 z-[-1] hidden md:block opacity-[82%] md:w-[1536px] h-full 2xl:w-full overflow-hidden grayscale-[10%]">
-            <video autoPlay loop muted className="w-full object-cover rotateY-180">
-              <source src="/videos/neural-network.mp4" type="video/mp4"/>
-              <source src="/videos/neural-network.webm" type="video/webm"/>
-              <source src="/videos/neural-network.ogv" type="video/ogg"/>
-              your browser does not support this video.
-            </video>
+        <section className='relative mb-20 h-[calc(100vh-57.6px)] before:absolute before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:bg-[url("/images/main-mobile.jpg")] before:bg-cover before:bg-left before:bg-no-repeat before:opacity-60 before:content-[""] after:absolute after:bottom-0 after:w-full after:shadow-[0px_10px_40px_50px_black] after:shadow-[#121212] after:content-[""]  before:md:hidden'>
+          <div className="video absolute top-0 left-0 z-[-1] hidden md:block opacity-[88%] md:w-[1536px] h-full 2xl:w-full overflow-hidden">
+                <video autoPlay preload="metadata" loop muted className="w-full object-cover rotateY-180" poster="/images/neural-network-poster.webp">
+                <source src="/videos/neural-network.mp4" type="video/mp4"/>
+                <source src="/videos/neural-network.webm" type="video/webm"/>
+                <source src="/videos/neural-network.ogv" type="video/ogg"/>
+                your browser does not support this video.
+              </video>
           </div>
           <div className="video absolute top-0 left-0 z-[-2] hidden md:block opacity-[60%] md:w-[1536px] h-full 2xl:w-full overflow-hidden">
-            <video autoPlay loop muted className="w-full object-cover">
-              <source src="/videos/neural-network-1.mp4" type="video/mp4"/>
-              <source src="/videos/neural-network-1.webm" type="video/webm"/>
-              <source src="/videos/neural-network-1.ogv" type="video/ogg"/>
-              your browser does not support this video.
-            </video>
+              <video autoPlay preload="metadata" loop muted className="w-full object-cover" poster="/images/neural-network-poster-1.webp">
+                <source src="/videos/neural-network-1.mp4" type="video/mp4"/>
+                <source src="/videos/neural-network-1.webm" type="video/webm"/>
+                <source src="/videos/neural-network-1.ogv" type="video/ogg"/>
+                your browser does not support this video.
+              </video>
           </div>
-          <span className="dots hidden opacity-40">
-            <span className="dot-1 absolute top-1/2 z-[-1] origin-bottom animate-dot1 rounded-full bg-[#fdf3da]"></span>
-            <span className="dot-2 absolute top-1/2 z-[-1] origin-bottom animate-dot2 rounded-full bg-[#fdf3da]"></span>
-            <span className="dot-3 absolute top-1/2 z-[-1] origin-bottom animate-dot3 rounded-full bg-[#fdf3da]"></span>
-            <span className="dot-4 absolute top-1/2 z-[-1] origin-bottom animate-dot4 rounded-full bg-[#fdf3da]"></span>
-          </span>
           <div className="container flex h-full">
             <div className="text gpa-1 flex flex-col justify-center text-primary-text sm:translate-x-[90px] xl:translate-x-0">
               <h2 className="mb-4 w-0 animate-[text_0.5s_linear_forwards] overflow-hidden text-4xl font-bold font-roboto-mono">
@@ -53,15 +47,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="skills" className="container mb-20 md:min-h-[100vh]">
-          <Skills />
-        </section>
-        <section id="projects" className="container mb-20 md:min-h-[100vh]">
-          <Projects />
-        </section>
-        <section id="contact" className="container mb-20 md:min-h-[80vh] before:bg-cover before:bg-[url('/images/contact.png')] before:hidden before:sm:block before:w-[900px] before:h-[300px] md:before:w-[1110px] md:before:h-[450px] before:translate-x-[-50%] lg:before:translate-x-[-46%] relative before:absolute before:contrast-0 before:left-[50%] before:z-[-1] before:translate-y-[-50%] lg:before:w-[1400px] before:top-[50%] lg:before:h-[600px] before:content-['']">
-          <Contact URL={process.env.APP_API_URL as string} />
-        </section>
+        <Skills />
+        <Projects />
+        <Contact URL={process.env.APP_API_URL as string} />
         <footer className="bg-dark-footer">
           <div className="container flex items-center justify-between py-4">
             <p className="text-sm text-primary-text sm:text-lg">

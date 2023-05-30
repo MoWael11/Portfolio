@@ -41,7 +41,7 @@ const Projects = () => {
   };
 
   return (
-    <>
+    <section id="projects" className="container mb-20 md:min-h-[100vh]">
       <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl tracking-wider text-primary-text">
         Projects
       </h2>
@@ -350,7 +350,7 @@ const Projects = () => {
           <div className="card-border absolute left-0 top-0 z-[1] hidden h-full w-full rounded-xl opacity-0 transition-opacity duration-500 md:block"></div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

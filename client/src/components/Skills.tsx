@@ -35,7 +35,10 @@ const Skills = () => {
   }, []);
 
   return (
-    <>
+    <section id="skills" className="container mb-20 md:min-h-[100vh] relative">
+      <div className="absolute top-[140px] z-[-1] right-[100px] hidden lg:block w-[160px]">
+        <Image width={140} height={140} src='/images/skills.png' alt="skills icon" className="w-full h-full"/>
+      </div>
       <h2 className="title text-shadow flex w-full items-center justify-center pb-10 pt-2 text-4xl tracking-wider text-primary-text">
         Skills
       </h2>
@@ -95,7 +98,7 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/typescript.png"
+              src="/images/typescript.svg"
               alt="typescript"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
@@ -117,7 +120,7 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/nextjs.png"
+              src="/images/next-js.svg"
               alt="nextjs"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
@@ -137,7 +140,7 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/nodejs.png"
+              src="/images/node-js.svg"
               alt="nodejs"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
@@ -179,7 +182,7 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/mongodb.png"
+              src="/images/mongodb.svg"
               alt="mondodb"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
@@ -221,7 +224,7 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/tailwind.png"
+              src="/images/tailwind-css.svg"
               alt="tailwindcss"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
@@ -243,7 +246,7 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/react.png"
+              src="/images/react.svg"
               alt="react"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
@@ -265,14 +268,80 @@ const Skills = () => {
             <Image
               width={1200}
               height={1200}
-              src="/images/python.png"
+              src="/images/python.svg"
               alt="python"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
           </Link>
         </li>
+        <li
+          data-lang={"HTML5"}
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border  font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[2200ms]'
+        >
+          <Link
+            replace={true}
+            scroll
+            target={"_blank"}
+            href={"https://developer.mozilla.org/en-US/docs/Learn/HTML"}
+            className={
+              "flex rounded-lg p-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:p-4"
+            }
+          >
+            <Image
+              width={1200}
+              height={1200}
+              src="/images/html5.svg"
+              alt="HTML5"
+              className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
+            />
+          </Link>
+        </li>
+        <li
+          data-lang={"CSS"}
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border  font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[2400ms]'
+        >
+          <Link
+            replace={true}
+            scroll
+            target={"_blank"}
+            href={"https://developer.mozilla.org/en-US/docs/Learn/css"}
+            className={
+              "flex rounded-lg p-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:p-4"
+            }
+          >
+            <Image
+              width={1200}
+              height={1200}
+              src="/images/css3.svg"
+              alt="CSS 3"
+              className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
+            />
+          </Link>
+        </li>
+        <li
+          data-lang={"JavaScript"}
+          className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border  font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[2600ms]'
+        >
+          <Link
+            replace={true}
+            scroll
+            target={"_blank"}
+            href={"https://developer.mozilla.org/en-US/docs/Learn/javascript"}
+            className={
+              "flex rounded-lg p-2 transition duration-300 hover:bg-dark-hover-secondary-bg lg:p-4"
+            }
+          >
+            <Image
+              width={1200}
+              height={1200}
+              src="/images/javascript.svg"
+              alt="javascript"
+              className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
+            />
+          </Link>
+        </li>
       </ul>
-    </>
+    </section>
   );
 };
 
