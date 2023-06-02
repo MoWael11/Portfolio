@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     type: Object,
     default: {
       'naval-battles': 0,
-      '2game': 0
+      'simon-game': 0
     },
   },
 })

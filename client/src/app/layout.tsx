@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Roboto, Roboto_Mono, Montserrat } from "@next/font/google";
+import axios from "axios";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -55,11 +56,8 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
+  
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${robotoMono.variable} `}>

@@ -8,7 +8,7 @@ type FormData = z.infer<typeof formValidator>;
 export const submitForm = async (req: Request, res: Response): Promise<any> => {
   const {name, email, message, phone}: FormData = req.body
   try {
-    const validatedForm = formValidator.parse({name, email, message, phone})
+    formValidator.parse({name, email, message, phone})
   } catch (error) {
     return res.status(400).json("Invalid form")
   }

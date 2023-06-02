@@ -15,7 +15,7 @@ const mailer_1 = require("../lib/mailer");
 const submitForm = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, email, message, phone } = req.body;
     try {
-        const validatedForm = contact_forms_1.formValidator.parse({ name, email, message, phone });
+        contact_forms_1.formValidator.parse({ name, email, message, phone });
     }
     catch (error) {
         return res.status(400).json("Invalid form");

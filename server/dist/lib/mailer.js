@@ -32,9 +32,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sendContactForm = void 0;
+exports.sendReport = exports.sendContactForm = void 0;
 const mailerConfig_1 = __importStar(require("../config/mailerConfig"));
 const dotenv_1 = require("dotenv");
+const date_fns_1 = require("date-fns");
+const ipController_1 = require("../controllers/ipController");
 (0, dotenv_1.config)();
 const sendContactForm = (res, name, email, message, phone) => __awaiter(void 0, void 0, void 0, function* () {
     const mail = {
@@ -85,3 +87,47 @@ const sendContactForm = (res, name, email, message, phone) => __awaiter(void 0, 
     }
 });
 exports.sendContactForm = sendContactForm;
+const sendReport = () => __awaiter(void 0, void 0, void 0, function* () {
+    const ips = yield (0, ipController_1.getAllIp)();
+    if (!ips.length)
+        return;
+    const date = new Date();
+    const fomrattedDate = (0, date_fns_1.format)(date, 'dd/MM/yyyy');
+    const ipsObject = ips.map(ip => {
+        return {
+            country: ip.country,
+            city: ip.city,
+            ip: ip.ipAddress
+        };
+    });
+    const mail = {
+        body: {
+            intro: `it's ${fomrattedDate} and you have ${ips.length} visitors on your website`,
+            name: 'Mohamed',
+            table: {
+                data: ipsObject,
+                columns: {
+                    customWidth: {
+                        country: '20%',
+                        city: '20%',
+                    },
+                }
+            },
+        },
+    };
+    const messageForMail = {
+        from: process.env.EMAIL,
+        to: process.env.MY_EMAIL,
+        subject: 'New report has been sent from your website',
+        html: mailerConfig_1.mailGenerator.generate(mail)
+    };
+    try {
+        yield mailerConfig_1.default.sendMail(messageForMail);
+        (0, ipController_1.deleteAllIp)();
+        console.log('email sent successfully');
+    }
+    catch (err) {
+        console.error('Error while sending email:', err);
+    }
+});
+exports.sendReport = sendReport;

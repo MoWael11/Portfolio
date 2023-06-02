@@ -71,7 +71,6 @@ export const updateUser = asyncHandler(async(req:  Request | any, res: Response)
   if (!user) {
     return res.status(400).json({ message: 'User not found'})
   }
-  console.log(req.user);
   if (req.user !== username) res.status(400).json({ message: 'invalid credentials'})
   // Check for duplicate
   const duplicate = await User.findOne({ username }).lean().exec() 

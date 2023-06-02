@@ -5,9 +5,15 @@ import Contact from "@/components/Contact";
 import { AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
 import {config} from 'dotenv'
+import axios from "axios";
+
 config()
 
-export default function Home() {
+export default async function Home() {
+  console.log('omak');
+  try {
+    axios.post(`${process.env.APP_API_URL}/ip`)
+  } catch (err) {}
   
   return (
     <>

@@ -64,7 +64,6 @@ exports.updateUser = (0, express_async_handler_1.default)((req, res) => __awaite
     if (!user) {
         return res.status(400).json({ message: 'User not found' });
     }
-    console.log(req.user);
     if (req.user !== username)
         res.status(400).json({ message: 'invalid credentials' });
     // Check for duplicate

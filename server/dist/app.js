@@ -9,6 +9,7 @@ const root_1 = __importDefault(require("./routes/root"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 const contactRoutes_1 = __importDefault(require("./routes/contactRoutes"));
+const ipRoutes_1 = __importDefault(require("./routes/ipRoutes"));
 const path_1 = __importDefault(require("path"));
 const logger_1 = require("./middleware/logger");
 const errorHandler_1 = require("./middleware/errorHandler");
@@ -17,21 +18,26 @@ const cors_1 = __importDefault(require("cors"));
 const corsOptions_1 = __importDefault(require("./config/corsOptions"));
 const dbConn_1 = __importDefault(require("./config/dbConn"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const report_1 = __importDefault(require("./config/report"));
 const PORT = process.env.PORT || 4000;
 const app = (0, express_1.default)();
 (0, dotenv_1.config)();
 console.log(process.env.NODE_ENV);
 (0, dbConn_1.default)();
+(0, report_1.default)();
+// to truest proxy so it able to identify the client's IP address
+app.set('trust proxy', true);
 app.use(logger_1.logger);
 app.use((0, cors_1.default)(corsOptions_1.default));
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 // serve the static files from the public directory
-app.use('/api', express_1.default.static(path_1.default.join(__dirname, '..', 'public')));
+app.use('/', express_1.default.static(path_1.default.join(__dirname, '..', 'public')));
 app.use('/', root_1.default);
 app.use('/auth', authRoutes_1.default);
 app.use('/users', userRoutes_1.default);
 app.use('/contact', contactRoutes_1.default);
+app.use('/ip', ipRoutes_1.default);
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) { // header of a http request is text/html

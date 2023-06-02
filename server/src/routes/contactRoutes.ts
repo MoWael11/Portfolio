@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { submitForm } from '../controllers/contactController'
 
-const router = Router()
+const router = Router() 
 
 router.post('/', submitForm)
 
