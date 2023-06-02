@@ -33,6 +33,7 @@ const Contact: FC<ContactProps> = ({ URL }) => {
     message: string,
     phone: string
   ) => {
+    email = email.trim()
     setIsLoading(true);
     try {
       const validatedForm = contactFormValidator.parse({

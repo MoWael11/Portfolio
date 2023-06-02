@@ -12,8 +12,9 @@ config()
 export default async function Home() {
   console.log('omak');
   try {
-    axios.post(`${process.env.APP_API_URL}/ip`)
+    const response = await axios.post(`${URL}/ip`, {})
   } catch (err) {}
+  
   
   return (
     <>
