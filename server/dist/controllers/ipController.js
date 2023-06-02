@@ -26,19 +26,12 @@ exports.addIp = (0, express_async_handler_1.default)((req, res) => __awaiter(voi
     console.log(ipAddress);
     const dublicate = yield Ip_1.default.findOne({ ipAddress }).lean().exec(); // to give just json with lean
     if (dublicate) {
-        console.log("'it's dupplicated");
-        return res.status(409).json('duplicate IPAddress');
+        return;
     }
     const geo = geoip_lite_1.default.lookup(ipAddress);
     const ipObject = { ipAddress, city: geo ? geo.city ? geo.city : ' - ' : ' - ', country: geo ? geo.country ? geo.country : ' - ' : ' - ' };
     console.log("new ip added " + ipObject);
-    const ip = yield Ip_1.default.create(ipObject);
-    if (ip) {
-        res.status(201).json({ message: `New IP ${ipAddress} added` });
-    }
-    else {
-        res.status(400).json({ message: 'Invalid ip data received' });
-    }
+    yield Ip_1.default.create(ipObject);
 }));
 const deleteAllIp = () => __awaiter(void 0, void 0, void 0, function* () {
     yield Ip_1.default.deleteMany({}).lean();

@@ -8,28 +8,19 @@ export const getAllIp = async () => {
   return allIp
 }
 
-export const addIp = asyncHandler(async (req:  Request, res: Response):  Promise<string | any> => {
+export const addIp = asyncHandler(async (req:  Request, res: Response) => {
   const ipAddress = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '' 
   console.log(ipAddress);
   
   const dublicate = await Ip.findOne({ipAddress}).lean().exec() // to give just json with lean
   if (dublicate) {
-    console.log("'it's dupplicated");
-    
-    return res.status(409).json('duplicate IPAddress')
+    return
   }
   
   const geo = geoip.lookup(ipAddress as string)  
-  
   const ipObject = { ipAddress, city: geo? geo.city? geo!.city  : ' - ' : ' - ', country: geo ? geo!.country ? geo!.country : ' - ' : ' - ' }
   console.log("new ip added " + ipObject);
-  
-  const ip = await Ip.create(ipObject)
-  if (ip) {
-    res.status(201).json({ message: `New IP ${ipAddress} added`})
-  } else {
-    res.status(400).json({ message: 'Invalid ip data received'})
-  }
+  await Ip.create(ipObject)
 })
 
 export const deleteAllIp = async() => {

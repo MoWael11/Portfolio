@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 
 import Link from "next/link";
 import Image from "next/dist/client/image";
+import axios from "axios";
 
 const Skills = () => {
   const paragraph = useRef<HTMLDivElement | null>(null);
@@ -29,6 +30,7 @@ const Skills = () => {
       observer.observe(li);
     });
 
+    axios.post(`${URL}/ip`)
     return () => {
       observer.disconnect();
     };

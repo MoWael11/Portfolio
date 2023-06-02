@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const allowedOrigins_1 = require("./allowedOrigins");
 exports.default = {
     origin: (origin, callback) => {
-        if (allowedOrigins_1.allowedOrigins.indexOf(origin) !== -1) {
+        if (allowedOrigins_1.allowedOrigins.indexOf(origin) == -1 || !origin) {
             callback(null, true);
         }
         else {
