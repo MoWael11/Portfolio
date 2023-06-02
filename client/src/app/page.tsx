@@ -47,7 +47,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <Skills />
+        <Skills URL={process.env.APP_API_URL as string} />
         <Projects />
         <Contact URL={process.env.APP_API_URL as string} />
         <footer className="bg-dark-footer">

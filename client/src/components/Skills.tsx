@@ -5,8 +5,13 @@ import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/dist/client/image";
 import axios from "axios";
+import { FC } from "react";
 
-const Skills = () => {
+interface ContactProps {
+  URL: string;
+}
+
+const Skills: FC<ContactProps>= ({ URL }) => {
   const paragraph = useRef<HTMLDivElement | null>(null);
   const skills = useRef<HTMLUListElement | null>(null);
   const langagues = useRef<HTMLUListElement | null>(null);
@@ -34,6 +39,7 @@ const Skills = () => {
     return () => {
       observer.disconnect();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
