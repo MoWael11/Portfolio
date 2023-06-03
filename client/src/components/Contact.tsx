@@ -1,12 +1,11 @@
 "use client";
 import { contactFormValidator } from "@/lib/validations/contact-form";
-import { useRef, useState } from "react";
+import { useRef, useState, FC } from "react";
 import { z } from "zod";
 import axios, { AxiosError } from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "./ui/Button";
-import { FC } from "react";
 
 type FormData = z.infer<typeof contactFormValidator>;
 
@@ -18,6 +17,7 @@ const Contact: FC<ContactProps> = ({ URL }) => {
   const pForShowState = useRef<HTMLParagraphElement>(null);
   const form = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
   const {
     register,
     handleSubmit,
@@ -26,14 +26,15 @@ const Contact: FC<ContactProps> = ({ URL }) => {
   } = useForm<FormData>({
     resolver: zodResolver(contactFormValidator),
   });
-
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value.trim());
+  };
   const submitForm = async (
     name: string,
     email: string,
     message: string,
     phone: string
   ) => {
-    email = email.trim()
     setIsLoading(true);
     try {
       const validatedForm = contactFormValidator.parse({
@@ -162,7 +163,9 @@ const Contact: FC<ContactProps> = ({ URL }) => {
                 spellCheck={false}
                 placeholder="Your Email"
                 autoComplete="off"
+                value={email}
                 {...register("email")}
+                onChange={handleEmailChange}
                 className="text-[16px] rounded-sm flex w-full border-[1px] border-dark-border relative bg-transparent px-4 py-2 text-primary-text outline-none transition-colors duration-500 placeholder:text-secondary-text placeholder:transition-opacity placeholder:duration-500 focus:border-white focus:placeholder:opacity-0"
               />
               <p className="absolute bottom-0 translate-y-[100%] text-sm text-error-text">
