@@ -9,9 +9,10 @@ export const getAllIp = async () => {
 }
 
 export const addIp = asyncHandler(async (req:  Request, res: Response) => {
-  const ipAddress = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '' 
-  console.log(ipAddress);
-  
+  let ipAddress = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '' 
+  if (typeof ipAddress === 'string' && ipAddress.substring(0,7) == '::ffff:') { 
+    ipAddress = ipAddress.substring(7);
+  }
   const dublicate = await Ip.findOne({ipAddress}).lean().exec() // to give just json with lean
   if (dublicate) {
     return
@@ -19,7 +20,6 @@ export const addIp = asyncHandler(async (req:  Request, res: Response) => {
   
   const geo = geoip.lookup(ipAddress as string)  
   const ipObject = { ipAddress, city: geo? geo.city? geo!.city  : ' - ' : ' - ', country: geo ? geo!.country ? geo!.country : ' - ' : ' - ' }
-  console.log("new ip added " + ipObject);
   await Ip.create(ipObject)
 })
 

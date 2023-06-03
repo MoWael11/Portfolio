@@ -3,7 +3,7 @@ import {sendReport} from '../lib/mailer'
 
 export default () => {
    cron.schedule('0 0 * * *', () => {
-    console.log('running a task every 5 minutes')
+    console.log('running a task every day')
     sendReport()
     }, {
     scheduled: true,

@@ -20,6 +20,7 @@ const app: Express = express()
 config()
 
 console.log(process.env.NODE_ENV);
+
 connectDB()
 report()
 // to truest proxy so it able to identify the client's IP address
