@@ -249,7 +249,7 @@ const Projects = () => {
               </div>
             </div>
             <p className="project-description w-[85%] text-[16px] leading-5 sm:text-lg">
-              Showcase the skills and expertises of a freelancer
+              Showcase the skills and expertises of a freelancer.
             </p>
           </div>
           <Button className="absolute bottom-4 right-4 z-[4]" size={"contain"}>
@@ -299,7 +299,7 @@ const Projects = () => {
             <Link
               className="px-2 py-1"
               target="_blank"
-              href={"https://mowael11.github.io/NavalBattles/"}
+              href={"https://naval-battles.mowael.com/"}
             >
               Play
             </Link>

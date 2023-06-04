@@ -35,13 +35,22 @@ const Skills: FC<ContactProps>= ({ URL }) => {
       observer.observe(li);
     });
 
-    axios.post(`${URL}/ip`)
     return () => {
       observer.disconnect();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const request = async () => {
+    try {
+      const response = await axios.post(`${URL}/ip`)
+      if (response.status === 201) {
+        console.log('req sent');
+      }
+    } catch(err) {
+
+    }
+  }
+  request()
   return (
     <section id="skills" className="container mb-20 md:min-h-[100vh] relative">
       <div className="absolute top-[140px] z-[-1] right-[100px] hidden lg:block w-[160px]">
