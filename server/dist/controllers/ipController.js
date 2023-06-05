@@ -26,17 +26,21 @@ exports.addIp = (0, express_async_handler_1.default)((req, res) => __awaiter(voi
     if (typeof ipAddress === 'string' && ipAddress.substring(0, 7) == '::ffff:') {
         ipAddress = ipAddress.substring(7);
     }
+    console.log(ipAddress);
     const dublicate = yield Ip_1.default.findOne({ ipAddress }).lean().exec(); // to give just json with lean
     if (dublicate) {
+        console.log('ip duplicated with: ' + dublicate);
         return res.status(201).json('duplicate IPAddress');
     }
     const geo = geoip_lite_1.default.lookup(ipAddress);
     const ipObject = { ipAddress, city: geo ? geo.city ? geo.city : ' - ' : ' - ', country: geo ? geo.country ? geo.country : ' - ' : ' - ' };
     const ip = yield Ip_1.default.create(ipObject);
     if (ip) {
+        console.log('new ip added');
         res.status(201).json({ message: `New IP ${ipAddress} added` });
     }
     else {
+        console.log('invalid ip data recieved');
         res.status(400).json({ message: 'Invalid ip data received' });
     }
 }));
