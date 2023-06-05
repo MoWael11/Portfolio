@@ -87,6 +87,7 @@ const Contact: FC<ContactProps> = ({ URL }) => {
         "Something went wrong, please try later.";
     } finally {
       setIsLoading(false);
+      setEmail('');
       form.current!.reset();
     }
   };

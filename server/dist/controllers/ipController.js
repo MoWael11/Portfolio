@@ -22,16 +22,23 @@ const getAllIp = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getAllIp = getAllIp;
 exports.addIp = (0, express_async_handler_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const ipAddress = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '';
-    console.log(ipAddress);
+    let ipAddress = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '';
+    if (typeof ipAddress === 'string' && ipAddress.substring(0, 7) == '::ffff:') {
+        ipAddress = ipAddress.substring(7);
+    }
     const dublicate = yield Ip_1.default.findOne({ ipAddress }).lean().exec(); // to give just json with lean
     if (dublicate) {
-        return;
+        return res.status(201).json('duplicate IPAddress');
     }
     const geo = geoip_lite_1.default.lookup(ipAddress);
     const ipObject = { ipAddress, city: geo ? geo.city ? geo.city : ' - ' : ' - ', country: geo ? geo.country ? geo.country : ' - ' : ' - ' };
-    console.log("new ip added " + ipObject);
-    yield Ip_1.default.create(ipObject);
+    const ip = yield Ip_1.default.create(ipObject);
+    if (ip) {
+        res.status(201).json({ message: `New IP ${ipAddress} added` });
+    }
+    else {
+        res.status(400).json({ message: 'Invalid ip data received' });
+    }
 }));
 const deleteAllIp = () => __awaiter(void 0, void 0, void 0, function* () {
     yield Ip_1.default.deleteMany({}).lean();

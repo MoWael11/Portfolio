@@ -43,12 +43,7 @@ const Skills: FC<ContactProps>= ({ URL }) => {
   const request = async () => {
     try {
       const response = await axios.post(`${URL}/ip`)
-      if (response.status === 201) {
-        console.log('req sent');
-      }
-    } catch(err) {
-
-    }
+    } catch(err) {}
   }
   request()
   return (

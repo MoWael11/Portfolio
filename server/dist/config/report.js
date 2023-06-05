@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_cron_1 = __importDefault(require("node-cron"));
 const mailer_1 = require("../lib/mailer");
 exports.default = () => {
-    node_cron_1.default.schedule('*/5 * * * *', () => {
-        console.log('running a task every 5 minutes');
+    node_cron_1.default.schedule('0 0 * * *', () => {
+        console.log('running a task every day');
         (0, mailer_1.sendReport)();
     }, {
         scheduled: true,
