@@ -19,7 +19,7 @@ const Header: FC = () => {
       <section className="container flex items-center justify-between gap-12 py-2">
         <Link href="/">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/logo.svg"}
             className="h-[40px] w-[40px]"
             width={90}
             height={90}
@@ -65,8 +65,9 @@ const Header: FC = () => {
           ref={menuButtonRef}
           className="relative h-6 w-6 cursor-pointer text-3xl sm:hidden"
           onClick={toggleMenu}
+          aria-label="menu"
         >
-          <div className="top-50% after:transition-`all absolute h-[3px] w-6 translate-y-[-50%] rounded bg-primary-text transition-all before:absolute before:h-[3px] before:w-6 before:-translate-x-3 before:-translate-y-2 before:rounded before:bg-primary-text before:transition-all before:duration-500 before:content-[''] after:absolute after:h-[3px] after:w-6 after:-translate-x-3 after:translate-y-2 after:rounded after:bg-primary-text after:duration-500 after:content-['']"></div>
+          <div className="top-50% after:transition-`all absolute h-[1.5px] w-6 translate-y-[-50%] rounded bg-primary-text transition-all before:absolute before:h-[1.5px] before:w-6 before:-translate-x-3 before:-translate-y-2 before:rounded before:bg-primary-text before:transition-all before:duration-500 before:content-[''] after:absolute after:h-[1.5px] after:w-6 after:-translate-x-3 after:translate-y-2 after:rounded after:bg-primary-text after:duration-500 after:content-['']"></div>
         </button>
       </section>
       <section

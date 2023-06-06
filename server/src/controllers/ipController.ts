@@ -13,10 +13,8 @@ export const addIp = asyncHandler(async (req:  Request, res: Response):  Promise
   if (typeof ipAddress === 'string' && ipAddress.substring(0,7) == '::ffff:') { 
     ipAddress = ipAddress.substring(7);
   }
-  console.log(ipAddress)
   const dublicate = await Ip.findOne({ipAddress}).lean().exec() // to give just json with lean
   if (dublicate) {
-    console.log('ip duplicated with: '+ dublicate)
     return res.status(201).json('duplicate IPAddress')
   }
  

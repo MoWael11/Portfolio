@@ -1,6 +1,5 @@
 import "./globals.css";
-import { Roboto, Roboto_Mono, Montserrat } from "@next/font/google";
-import axios from "axios";
+import { Roboto, Roboto_Mono } from "@next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -46,8 +45,8 @@ export const metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/icon/favicon-32x32.png",
-    shortcut: "/icon/favicon.ico",
+    icon: "/icon/favicon.svg",
+    shortcut: "/icon/favicon.svg",
     apple: "/icon/apple-touch-icon.png",
     other: {
       rel: "android-chrome-192x192.png",
@@ -60,6 +59,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="N8NSxi7VrsgAzWOI5BgFhaAAv9BpHNVvTRGMYYpjXgc" />
+      </head>
       <body className={`${roboto.variable} ${robotoMono.variable} `}>
         {children}
       </body>

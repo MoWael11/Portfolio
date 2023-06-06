@@ -201,7 +201,7 @@ const Skills: FC<ContactProps>= ({ URL }) => {
           </Link>
         </li>
         <li
-          data-lang={"web3"}
+          data-lang={"Web3"}
           className='bg-dark-secondary duration-800 relative translate-x-[-100%] rounded-lg border border-dark-border font-roboto-mono font-medium text-white opacity-0 transition before:absolute before:left-1/2 before:top-[-10px] before:hidden before:translate-x-[-50%] before:translate-y-[calc((-100%))] before:rounded-md before:bg-[#262626] before:px-2 before:py-1 before:opacity-0 before:transition before:duration-1000 before:content-[attr(data-lang)] after:absolute after:left-1/2 after:top-0 after:hidden after:translate-x-[-50%] after:translate-y-[-11px] after:border-[10px] after:border-x-transparent after:border-b-transparent after:border-t-[#262626] after:opacity-0 after:transition after:duration-1000 after:content-[""] hover:before:block hover:before:opacity-100 hover:after:block hover:after:opacity-100 md:delay-[1400ms]'
         >
           <Link
@@ -214,7 +214,7 @@ const Skills: FC<ContactProps>= ({ URL }) => {
             <Image
               width={1200}
               height={1200}
-              src="/images/web3.png"
+              src="/images/web3.svg"
               alt="web3"
               className="h-[50px] w-[50px] sm:h-[64px] sm:w-[64px] lg:h-[80px] lg:w-[80px]"
             />
